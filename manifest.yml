@@ -1,0 +1,9 @@
+applications:
+- name: demoDASHBOARDDASHBOARD
+  random-route: true
+  buildpack: java_buildpack
+  memory: 1g
+  path: target/demo-metrics-forwarder-0.0.1-SNAPSHOT.jar
+  services:
+  - demo-db # cf create-service cleardb spark demo-db
+  - demo-metrics-forwarder # cf create-service metrics-forwarder 4x4000 demo-metrics-forwarder
